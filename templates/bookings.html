@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Current Bookings</h1>
+        <ul>
+            {% for booking in bookings %}
+            <li>{{ booking['name'] }} - {{ booking['slot'] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}">Back to Booking</a>
+    </div>
+</body>
+</html>
